@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>CRUD Application using MockAPI</h1>
+        <div class="row">
+            <div class="col-6">
+                <h2>Posts</h2>
+                <div class="posts" id="posts">
+
+                    
+                      <div class="post">
+                        <div class="post-header">
+                            <img src="https://www.zubairshaikh.me/images/img/profile.jpg" alt="Avatar">
+                            <div>
+                                <h3>John Doe (Developer)</h3>
+                                <small>9/29/2024, 10:30 AM</small>
+                            </div>
+                        </div>
+                        <p>This is the post body content.</p>
+                        <div class="actions">
+                            <button class="edit-btn" onclick="editPost(1)">Edit</button>
+                            <button class="delete-btn" onclick="deletePost(1)">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+             </div> 
+            <div class="col-6">
+                <!-- <div id="createpost">
+                    <h2>Create Posts</h2>
+                    <form id="createPostForm">
+                        <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                        <input type="text" name="title" id="title" placeholder="Your Title" required>
+                        <input type="text" name="avatar" id="avatar" placeholder="Your Profile URL" required>
+                        <textarea name="body" id="body" placeholder="Enter you Description"></textarea>
+                        <button type="submit" class="btn" onclick="createpost()"> Create Post</button>
+                    </form>
+                </div> -->
+
+    <form id="createPostForm">
+        <h1>create post </h1>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="avatar" placeholder="Avatar URL" required>
+        <textarea id="body" placeholder="Body" required></textarea>
+        <button type="submit">Create Post</button>
+    </form>
+
+    <div id="posts"></div>
+
+    <div id="editPostModal" class="hidden">
+        <h2>Edit Post</h2>
+        <form id="editPostForm">
+            <input type="hidden" id="editPostId">
+            <input type="text" id="editName" required>
+            <input type="text" id="editTitle" required>
+            <input type="text" id="editAvatar" required>
+            <textarea id="editBody" required></textarea>
+            <button type="submit">Update Post</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+        </form>
+    </div>
+                
+                <!-- ---------------update-form------------ --> -->
+                <div id="update-post" style="display: none;">
+                    <h2>Update Post</h2>
+                    <form id="updatePostForm">
+                        <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                        <input type="text" name="title" id="title" placeholder="Your Title" required>
+                        <input type="text" name="avatar" id="avatar" placeholder="Your Profile URL" required>
+                        <textarea name="body" id="body" placeholder="Enter you Description"></textarea>
+                        <button type="submit" class="btn"> Update Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Edit Post Modal -->
+    <div id="editPostModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Post</h2>
+            <form id="editPostForm">
+                <input type="hidden" id="editPostId">
+                <div>
+                    <label for="editName">Name:</label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div>
+                    <label for="editTitle">Title:</label>
+                    <input type="text" id="editTitle" required>
+                </div>
+                <div>
+                    <label for="editAvatar">Avatar URL:</label>
+                    <input type="text" id="editAvatar" required>
+                </div>
+                <div>
+                    <label for="editBody">Body:</label>
+                    <textarea id="editBody" required></textarea>
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
